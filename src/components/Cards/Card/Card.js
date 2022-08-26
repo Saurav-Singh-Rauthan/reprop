@@ -19,7 +19,13 @@ const Card = (props) => {
       <div className={Styles.desc}>
         <div className={Styles.priceCont}>
           <p className={Styles.price}>
-            ${props.data?.price} <span className={Styles.pricespan}>/month</span>
+            ${props.data?.price}{" "}
+            <span
+              className={Styles.pricespan}
+              style={{ display: props.type === "rent" ? null : "none" }}
+            >
+              /month
+            </span>
           </p>
           <FavoriteIcon sx={{ color: "#7064f6", cursor: "pointer" }} />
         </div>
@@ -29,14 +35,16 @@ const Card = (props) => {
 
         <div className={Styles.details}>
           <div className={Styles.icons}>
-            <BedIcon fontSize="small" sx={{ color: "#7064f6" }} /> {props.data?.bedrooms} bed(s)
+            <BedIcon fontSize="small" sx={{ color: "#7064f6" }} />{" "}
+            {props.data?.bedrooms} bed(s)
           </div>
           <div className={Styles.icons}>
-            <BathtubIcon fontSize="small" sx={{ color: "#7064f6" }} /> 
+            <BathtubIcon fontSize="small" sx={{ color: "#7064f6" }} />
             {props.data?.bathrooms} bathrooms
           </div>
           <div className={Styles.icons}>
-            <CropSquareIcon fontSize="small" sx={{ color: "#7064f6" }} /> {props.data?.area} m²
+            <CropSquareIcon fontSize="small" sx={{ color: "#7064f6" }} />{" "}
+            {props.data?.area} m²
           </div>
         </div>
       </div>

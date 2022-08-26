@@ -13,10 +13,9 @@ const Cards = (props) => {
       houses.push(data);
     });
 
-    console.log(houses, "hous");
     if (houses.length >= 1) {
       result = houses.map((el) => {
-        return <Card data={el} />;
+        return <Card data={el} type={props.type} />;
       });
     }
   }

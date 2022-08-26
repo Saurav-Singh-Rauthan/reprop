@@ -21,7 +21,6 @@ const Rent = (props) => {
     axios
       .get("https://reprop-498cb-default-rtdb.firebaseio.com/buy.json")
       .then((res) => {
-        console.log(res.data);
         sethouses(res.data);
       });
   }, []);
@@ -30,7 +29,6 @@ const Rent = (props) => {
     let filRes = Object.keys(houses).map((key) => {
       return houses[key];
     });
-    console.log(filRes, "filres");
 
     filRes = filRes.filter((house) => {
       let val = 1;
@@ -38,12 +36,7 @@ const Rent = (props) => {
         val = val && house.type === filter.proptype;
       }
       if (filter.date !== null) {
-        console.log(
-          filter.date,
-          house.movein,
-          "check",
-          val && new Date(filter.date) >= new Date(house.movein)
-        );
+       
         val = val && new Date(filter.date) >= new Date(house.movein);
       }
       if (filter.location !== "") {
@@ -78,14 +71,11 @@ const Rent = (props) => {
     seachHandler();
   };
 
-  console.log(filter, "filter");
-  console.log(search.filtered, "filtered");
-
   return (
     <div>
       <Filterbar setfilter={setfilter} clicked={switchSearch} />
       <div>
-        <Cards data={search.val ? search.filtered : houses} />
+        <Cards data={search.val ? search.filtered : houses} type={"buy"} />
       </div>
     </div>
   );

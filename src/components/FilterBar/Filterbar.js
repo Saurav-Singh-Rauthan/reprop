@@ -35,8 +35,6 @@ const Filterbar = (props) => {
     }
   };
 
-  // console.log(price,location,new Date(date).toLocaleDateString(),proptype)
-
   return (
     <div className={Styles.cont}>
       <TextField
