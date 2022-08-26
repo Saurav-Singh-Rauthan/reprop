@@ -57,7 +57,11 @@ const Filterbar = (props) => {
         />
       </LocalizationProvider>
 
-      <FormControl fullWidth className={Styles.formel} sx={{ width: "20%" }}>
+      <FormControl
+        fullWidth
+        className={Styles.formel}
+        sx={{ width: window.innerWidth > 1000 ? "20%" : "100%" }}
+      >
         <InputLabel id="demo-simple-select-label">Price</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -72,7 +76,11 @@ const Filterbar = (props) => {
         </Select>
       </FormControl>
 
-      <FormControl fullWidth className={Styles.formel} sx={{ width: "20%" }}>
+      <FormControl
+        fullWidth
+        className={Styles.formel}
+        sx={{ width: window.innerWidth > 1000 ? "20%" : "100%" }}
+      >
         <InputLabel id="demo-simple-select-label">Property Type</InputLabel>
         <Select
           labelId="demo-simple-select-label"
