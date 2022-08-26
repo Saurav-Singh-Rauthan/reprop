@@ -8,7 +8,7 @@ const NotFound = (props) => {
     <div className={Styles.cont}> 
       <img src={nfImg} alt="page not found 404" className={Styles.img} />
       <p>Can't find the requested page</p>
-      <Link to="/">Back to Home</Link>
+      <Link to="/" className={Styles.btn}>Back to Home</Link>
     </div>
   );
 };
