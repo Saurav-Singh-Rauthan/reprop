@@ -11,7 +11,7 @@ const Card = (props) => {
     <div className={Styles.cont}>
       <div className={Styles.img}>
         <img
-          src="https://cdn.confident-group.com/wp-content/uploads/2021/08/26224309/oakwood_gallery_image.jpg"
+          src={props.data?.img}
           alt=""
           style={{ width: "100%", objectFit: "cover", borderRadius: "8px" }}
         />
@@ -19,25 +19,24 @@ const Card = (props) => {
       <div className={Styles.desc}>
         <div className={Styles.priceCont}>
           <p className={Styles.price}>
-            $2500 <span className={Styles.pricespan}>/month</span>
+            ${props.data?.price} <span className={Styles.pricespan}>/month</span>
           </p>
           <FavoriteIcon sx={{ color: "#7064f6", cursor: "pointer" }} />
         </div>
 
-        <p className={Styles.name}>Name</p>
-        <p className={Styles.address}>Address</p>
+        <p className={Styles.name}>{props.data?.name}</p>
+        <p className={Styles.address}>{props.data?.address}</p>
 
         <div className={Styles.details}>
           <div className={Styles.icons}>
-            <BedIcon fontSize="small" sx={{ color: "#7064f6" }} /> 3 beds
+            <BedIcon fontSize="small" sx={{ color: "#7064f6" }} /> {props.data?.bedrooms} bed(s)
           </div>
           <div className={Styles.icons}>
-            <BathtubIcon fontSize="small" sx={{ color: "#7064f6" }} /> 2
-            bathrooms
+            <BathtubIcon fontSize="small" sx={{ color: "#7064f6" }} /> 
+            {props.data?.bathrooms} bathrooms
           </div>
           <div className={Styles.icons}>
-            <CropSquareIcon fontSize="small" sx={{ color: "#7064f6" }} /> 6x7.5
-            m²
+            <CropSquareIcon fontSize="small" sx={{ color: "#7064f6" }} /> {props.data?.area} m²
           </div>
         </div>
       </div>

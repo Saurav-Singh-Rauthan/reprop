@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Styles from "./Filterbar.module.css";
 import TextField from "@mui/material/TextField";
@@ -16,6 +16,15 @@ const Filterbar = (props) => {
   const [price, setPrice] = useState(null);
   const [location, setLocation] = useState("");
 
+  useEffect(() => {
+    props.setfilter({
+      proptype: proptype,
+      date: date ? new Date(date).toLocaleDateString() : null,
+      price: price,
+      location: location,
+    });
+  }, [proptype, date, price, location]);
+
   const handleChange = (event, type) => {
     if (type === "price") {
       setPrice(event.target.value);
@@ -25,7 +34,7 @@ const Filterbar = (props) => {
       setProptype(event.target.value);
     }
   };
-  
+
   // console.log(price,location,new Date(date).toLocaleDateString(),proptype)
 
   return (
@@ -80,7 +89,9 @@ const Filterbar = (props) => {
         </Select>
       </FormControl>
 
-      <button className={Styles.searchBtn}>Search</button>
+      <button className={Styles.searchBtn} onClick={props.clicked}>
+        Search
+      </button>
     </div>
   );
 };
