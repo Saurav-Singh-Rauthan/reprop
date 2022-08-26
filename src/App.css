@@ -19,6 +19,7 @@ html,
   width: 100%;
   display: flex;
   flex-direction: column;
+  background: #F8F7FD;
 }
 
 .content {

@@ -19,6 +19,7 @@ const NavbarDesk = (props) => {
 
   return (
     <div className={Styles.cont}>
+      {/* desk navbar */}
       <div className={Styles.options}>
         <div className={Styles.logo}>
           <BusinessIcon sx={{ color: "#7064f6" }} fontSize={"large"} />
@@ -62,6 +63,7 @@ const NavbarDesk = (props) => {
         <MenuIcon />
       </div>
 
+      {/* Mobile navbar */}
       <div
         className={[
           Styles.navbarMob,

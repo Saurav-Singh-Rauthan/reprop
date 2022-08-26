@@ -1,0 +1,23 @@
+.cont {
+  border-radius: 4px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  column-gap: 1rem;
+  border: 1px solid #ccc;
+  background: white;
+  justify-content: space-evenly;
+}
+
+.searchBtn {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  color: white;
+  background: #7064f6;
+  border: 1px solid #7064f6;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
