@@ -60,3 +60,26 @@
 .btn:active {
   box-shadow: 8px 8px 2px 2px #998fd8;
 }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 700px) {
+  .parentCont {
+    height: auto;
+  }
+
+  .cont {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .cont {
+    width: 100%;
+  }
+
+  .cardCont {
+    padding: 1rem;
+    height: 550px;
+  }
+}
